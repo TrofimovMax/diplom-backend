@@ -1,7 +1,26 @@
+# == Schema Information
+#
+# Table name: gyms
+#
+#  id         :bigint           not null, primary key
+#  address    :string           not null
+#  title      :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  owner_id   :bigint
+#
+# Indexes
+#
+#  index_gyms_on_owner_id  (owner_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (owner_id => users.id)
+#
 class Gym < ApplicationRecord
 
 
-  belongs_to :owner, class_name: 'User'
+  belongs_to :owner, class_name: 'User', required: false
 
   # has one attachment :avatar
   # has many attachments :pictures
