@@ -12,23 +12,60 @@
 #   Doorkeeper::Application.create!(name: 'React', redirect_uri: '', scopes: '')
 # end
 
+schedule_1 = Biz::Schedule.new do |config|
+  config.hours = {
+    mon: {'09:00' => '17:00'},
+    tue: {'10:00' => '16:00'},
+    wed: {'09:00' => '17:00'},
+    thu: {'10:00' => '16:00'},
+    fri: {'09:00' => '17:00'},
+    sat: {'10:00' => '14:00'}
+  }
+end
 
-Gym.create([
+schedule_2 = Biz::Schedule.new do |config|
+  config.hours = {
+    mon: {'09:00' => '17:00'},
+    tue: {'10:00' => '16:00'},
+    wed: {'09:00' => '17:00'},
+    thu: {'18:00' => '23:00'},
+    fri: {'12:00' => '20:00'},
+    sat: {'11:00' => '18:00'}
+  }
+end
+
+schedule_3 = Biz::Schedule.new do |config|
+  config.hours = {
+    mon: {'01:00' => '07:00'},
+    tue: {'10:00' => '19:00'},
+    wed: {'09:00' => '15:00'},
+    thu: {'15:00' => '22:00'},
+    fri: {'09:00' => '17:00'},
+    sat: {'08:00' => '14:00'}
+  }
+end
+
+Gym.create!([
              {
                title: 'SPORT PLUS',
                address: 'Petrovskaya 51',
+               schedule: schedule_1
              },
              {
                title: 'SPORT PLUS CLASS 2',
                address: 'Petrovskaya 51 corp 2',
+               schedule: schedule_2
              },
              {
                title: 'SPORT PLUS CLASS 3',
                address: 'Petrovskaya 51 corp 3',
+               schedule: schedule_3
              },
            ])
 
-User.first_or_create(email: 'trofimovmaxdev@gmail.com',
-                     password: 'qwerty1234',
-                     password_confirmation: 'qwerty1234',
-                     role: User.roles[:admin])
+User.create!(email: 'trofimovmaxdev@gmail.com',
+             password: 'qwerty1234',
+             password_confirmation: 'qwerty1234',
+             first_name: 'Grob',
+             nickname: 'grob',
+             role: User.roles[:admin])

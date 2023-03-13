@@ -4,6 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  address    :string           not null
+#  schedule   :jsonb
 #  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

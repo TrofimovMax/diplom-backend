@@ -31,5 +31,12 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable
+
   enum role: %i[user admin]
+
+  validates :first_name,
+            :nickname,
+            :role,
+            presence: true
+
 end

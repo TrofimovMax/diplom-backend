@@ -70,9 +70,13 @@ GEM
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
     bcrypt (3.1.18)
+    biz (1.8.2)
+      clavius (~> 1.0)
+      tzinfo
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    clavius (1.0.4)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -174,6 +178,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  biz
   bootsnap
   debug
   devise
