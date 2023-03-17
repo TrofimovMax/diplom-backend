@@ -23,9 +23,21 @@ class GymsController < ApplicationController
   def update
     id = params[:id]
     gym = Gym.find(id)
+    hours = params[:hours].to_unsafe_hash
+    schedule = Biz::Schedule.new do |config|
+      config.hours = {
+        mon: hours[:mon],
+        tue: hours[:tue],
+        wed: hours[:wed],
+        thu: hours[:thu],
+        fri: hours[:fri],
+        sat: hours[:sat]
+      }
+    end
     gym.update({
       title: params[:title],
-      address: params[:address]
+      address: params[:address],
+      schedule: schedule
     })
 
     render json: gym
