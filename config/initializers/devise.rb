@@ -16,6 +16,18 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'c805787a06ef7c8e2abb0ac7d51422ef8593a6cd65b38d5ce0cdc04ba1843d7035aa3cdfde5f5ae8342be81c8080970fc5bf7cc5626aa8fa68f09782e784b16b'
 
+  config.jwt do |jwt|
+    jwt.secret = ENV['SECRET_KEY_BASE']
+    jwt.dispatch_requests = [
+      ['POST', %r{^/login.json$}],
+      ['POST', %r{^/signup$}],
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/logout$}],
+    ]
+    jwt.expiration_time = 24.hours.to_i
+  end
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'

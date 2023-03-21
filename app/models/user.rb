@@ -6,6 +6,7 @@
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  first_name             :string           not null
+#  jti                    :string           not null
 #  last_name              :string
 #  nickname               :string           not null
 #  remember_created_at    :datetime
@@ -18,11 +19,14 @@
 # Indexes
 #
 #  index_users_on_email                 (email) UNIQUE
+#  index_users_on_jti                   (jti) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
 
-  has_many :gyms, dependent: :destroy
+  include Devise::JWT::RevocationStrategies::JTIMatcher
+
+  has_many :gyms, foreign_key: :owner_id, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -30,7 +34,8 @@ class User < ApplicationRecord
          :registerable,
          :recoverable,
          :rememberable,
-         :validatable
+         :validatable,
+         :jwt_authenticatable, jwt_revocation_strategy: self
 
   enum role: %i[user admin]
 

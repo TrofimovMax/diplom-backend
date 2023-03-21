@@ -23,5 +23,10 @@ module DiplomBackend
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.session_store :cookie_store, domain: :all, key: '_interslice_session'
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use config.session_store, config.session_options
+    config.action_controller.forgery_protection_origin_check = false
   end
 end

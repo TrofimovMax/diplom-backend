@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.3"
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
@@ -13,6 +15,7 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 gem "devise"
+gem "devise-jwt"
 
 gem "biz"
 
