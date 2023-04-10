@@ -12,7 +12,7 @@ Rails.application.routes.draw do
              }
 
   resources :gyms, only: %i[index show create update destroy]
-  # resources :booking_requests, only: %i[index create update destroy]
+  resources :bookings, only: %i[index create update destroy]
 
   root "articles#index"
 
