@@ -8,7 +8,6 @@ class BookingsController < ApplicationController
 
   def create
     a = current_user.id
-    puts a
     booking = Booking.create({
                  gym_id: params[:gym_id],
                  user_id: a,
