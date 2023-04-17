@@ -4,6 +4,7 @@ class CreateGyms < ActiveRecord::Migration[7.0]
       t.string :title, null: false
       t.string :address, null: false
       t.jsonb :schedule
+      t.integer :capacity
 
       t.timestamps
     end

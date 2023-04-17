@@ -5,19 +5,25 @@ class BookingsController < ApplicationController
     render json: bookings
   end
 
-
+  def current_bookings
+    count = Booking.where(gym_id: params[:gym_id], start_at: params[:start_at]).count
+    render json: {
+      current_bookings: count,
+    }
+  end
   def create
     if current_user
       current_user_id = current_user.id
       booking = Booking.create({
-                                 gym_id: params[:gym_id],
-                                 user_id: current_user_id,
-                                 start_at: params[:start_at],
-                                 end_at: params[:end_at]
-                               })
+          gym_id: params[:gym_id],
+          user_id: current_user_id,
+          start_at: params[:start_at],
+          end_at: params[:end_at]
+        })
       render json: {
         status: 200,
         message: "booking was successfully on " + params[:start_at],
+        booking: booking,
       }, status: :ok
     else
       render json: {
