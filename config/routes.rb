@@ -12,7 +12,9 @@ Rails.application.routes.draw do
                registrations: 'users/registrations'
              }
 
-  resources :gyms, only: %i[index show create update destroy]
+  resources :gyms, only: %i[index show create update destroy] do
+    resources :bookings, only: %i[index create update destroy]
+  end
   resources :bookings, only: %i[index create update destroy]
 
   root "articles#index"
