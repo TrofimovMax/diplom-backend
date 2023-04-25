@@ -22,11 +22,7 @@ class BookingsController < ApplicationController
         start_at: params[:start_at],
         end_at: params[:end_at]
       })
-    render json: {
-      status: 200,
-      message: "booking was successfully on " + params[:start_at],
-      booking: booking,
-    }, status: :ok
+    render json: booking
   end
 
   def update

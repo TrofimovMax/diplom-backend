@@ -14,8 +14,9 @@ Rails.application.routes.draw do
 
   resources :gyms, only: %i[index show create update destroy] do
     resources :bookings, only: %i[index create update destroy]
+    resources :wishes, only: %i[index create update destroy]
   end
-  resources :bookings, only: %i[index create update destroy]
+  # resources :bookings, only: %i[index create update destroy]
 
   root "articles#index"
 

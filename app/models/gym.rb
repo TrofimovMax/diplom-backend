@@ -24,6 +24,7 @@ class Gym < ApplicationRecord
 
   belongs_to :owner, class_name: 'User', required: false
   has_many :bookings
+  has_many :wishes
   # has one attachment :avatar
   # has many attachments :pictures
 

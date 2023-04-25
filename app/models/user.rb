@@ -28,6 +28,7 @@ class User < ApplicationRecord
 
   has_many :gyms, foreign_key: :owner_id, dependent: :destroy
   has_many :bookings
+  has_many :wishes
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
