@@ -31,7 +31,8 @@ class GymsController < ApplicationController
         wed: hours[:wed],
         thu: hours[:thu],
         fri: hours[:fri],
-        sat: hours[:sat]
+        sat: hours[:sat],
+        sun: hours[:sun]
       }
     end
     gym.update({
