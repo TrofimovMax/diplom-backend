@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
   def index
-    bookings = Booking.where(gym_id: params[:gym_id]).all
+    bookings = Booking.where(gym_id: params[:gym_id]).where("start_at > :month_ago", {month_ago: DateTime.current - 1.month }).all
     # bookings = Booking.where(gym_id: params[:gym_id], start_at: params[:start]..params[:end]).all
     render json: bookings
   end
