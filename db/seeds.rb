@@ -50,20 +50,20 @@ end
 
 Gym.create!([
              {
-               title: 'YOGA',
-               address: 'Petrovskaya 51',
+               title: 'Йога',
+               address: 'Петровская 51 корп 1',
                schedule: schedule_1,
                capacity: 25
              },
              {
-               title: 'BODYBUILDING',
-               address: 'Petrovskaya 51 corp 2',
+               title: 'Бодибилдинг',
+               address: 'Петровская 51 корп 2',
                schedule: schedule_2,
                capacity: 20
              },
              {
-               title: 'FITNESS',
-               address: 'Petrovskaya 51 corp 3',
+               title: 'Фитнес',
+               address: 'Петровская 51 корп 3',
                schedule: schedule_3,
                capacity: 15
              },
