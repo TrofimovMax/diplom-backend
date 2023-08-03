@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
+  post "/graphql", to: "graphql#execute"
   get '/current_user', to: 'current_user#index'
   get '/current_bookings', to: 'bookings#current_bookings'
   get '/admin', to: 'current_user#admin'
@@ -20,5 +24,4 @@ Rails.application.routes.draw do
   # resources :bookings, only: %i[index create update destroy]
 
   root "articles#index"
-
 end
