@@ -4,17 +4,17 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    field :gyms, [Types::GymType], null: false do
+    field :gyms, [Types::Models::GymType], null: false do
       description "Query that selects all gyms"
     end
     field :gymsId, Integer, null:false do
       description "Query that selects one gym"
     end
 
-    field :bookings, [Types::BookingType], null: false do
+    field :bookings, [Types::Models::BookingType], null: false do
       description "Query that selects all bookings"
     end
-    field :bookingByUserId, Types::BookingType, null: true do
+    field :bookingByUserId, Types::Models::BookingType, null: true do
       description "Query that selects all bookings this user"
     end
 
