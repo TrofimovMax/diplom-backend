@@ -4,33 +4,12 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    field :gyms, [Types::Models::GymType], null: false do
-      description "Query that selects all gyms"
-    end
-    field :gymsId, Integer, null:false do
-      description "Query that selects one gym"
-    end
+    field :fetch_gyms, resolver: Queries::Gyms::FetchGyms, null: false
+    field :get_gym_by_id, resolver: Queries::Gyms::GetGymById, null: true
 
-    field :bookings, [Types::Models::BookingType], null: false do
-      description "Query that selects all bookings"
-    end
-    field :bookingByUserId, Types::Models::BookingType, null: true do
-      description "Query that selects all bookings this user"
-    end
+    field :fetch_bookings, resolver: Queries::Bookings::FetchBookings, null: false
+    field :get_booking_by_gym_id, resolver: Queries::Bookings::GetBookingByGymId, null: true
 
-    def bookings
-      @bookings = Booking.all
-    end
-    def bookingByUserId(id)
-      Booking.where(user_id: id)
-    end
-
-    def gyms
-      Gym.all
-    end
-    def gymsId(id)
-      Gym.find(id)
-    end
 
   end
 end
