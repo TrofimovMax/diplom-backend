@@ -37,4 +37,16 @@ class DiplomBackendSchema < GraphQL::Schema
     # For example, use Rails' GlobalID library (https://github.com/rails/globalid):
     GlobalID.find(global_id)
   end
+
+  # rescue_from(Pundit::NotAuthorizedError) do |exception, obj, args, ctx, field|
+  #   raise GraphQL::ExecutionError, "You don't have permissions"
+  # end
+
+  rescue_from(ActiveRecord::RecordNotFound) do |_exception, _obj, _args, _ctx, field|
+    raise GraphQL::ExecutionError, "#{field.type.unwrap.graphql_name} not found"
+  end
+
+  rescue_from(ActiveRecord::RecordInvalid) do |_exception, _obj, _args, _ctx, field|
+    raise GraphQL::ExecutionError, "#{_exception.message}"
+  end
 end

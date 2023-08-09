@@ -10,6 +10,7 @@ module Types
     field :fetch_bookings, resolver: Queries::Bookings::FetchBookings, null: false
     field :get_booking_by_gym_id, resolver: Queries::Bookings::GetBookingByGymId, null: true
 
-
+    field :fetch_wishes, resolver: Queries::Wishes::FetchWishes, null: false
+    field :get_wishing_by_gym_id, resolver: Queries::Wishes::GetWishingByGymId, null: true
   end
 end
