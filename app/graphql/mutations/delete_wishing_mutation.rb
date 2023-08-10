@@ -1,23 +1,23 @@
 module Mutations
-  class DeleteBookingMutation < BaseMutation
+  class DeleteWishingMutation < BaseMutation
     # Just returning id is okay
     field :id, ID, null: true
-    field :booking, Types::Models::BookingType, null:false
+    field :wishing, Types::Models::WishingType, null:false
 
     argument :id, ID, required: true
 
     def resolve(id:)
-      booking = Booking.find(id)
+      wishing = Wishing.find(id)
       # if booking.user != context[:current_user]
       #   raise GraphQL::ExecutionError, "You are not authorized!"
       # end
-      if booking.destroy
+      if wishing.destroy
         {
           id: id,
-          booking: booking,
+          wishing: wishing,
         }
       else
-        raise GraphQL::ExecutionError, booking.errors.full_messages.join(", ")
+        raise GraphQL::ExecutionError, wishing.errors.full_messages.join(", ")
       end
     end
   end
