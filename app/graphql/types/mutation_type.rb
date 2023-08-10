@@ -1,5 +1,7 @@
 module Types
   class MutationType < Types::BaseObject
+    field :update_booking_mutation, mutation: Mutations::UpdateBookingMutation
+    field :delete_booking_mutation, mutation: Mutations::DeleteBookingMutation
     field :update_gym_mutation, mutation: Mutations::UpdateGymMutation
     field :delete_gym, mutation: Mutations::DeleteGym
     field :create_booking_mutation, mutation: Mutations::CreateBookingMutation

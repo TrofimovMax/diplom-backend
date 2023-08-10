@@ -3,7 +3,7 @@ module Mutations
     field :gym, Types::Models::GymType, null: false
 
     argument :id, ID, required: true
-    argument :attributes, Types::Inputs::Gym::CreateOrUpdateAttributes, required: true
+    argument :attributes, Types::Inputs::Gym::GymAttributes, required: true
 
     def resolve(id:, attributes:)
       gym = Gym.find(id)

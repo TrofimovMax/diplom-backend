@@ -3,8 +3,8 @@
 module Types
   module Inputs
     module Gym
-      class CreateOrUpdateAttributes < Types::BaseInputObject
-        description "Attributes for creating or updating a blog post"
+      class GymAttributes < Types::BaseInputObject
+        description "Attributes for creating or updating a gym"
         argument :title, String, "Name for gym", required: true
         argument :address, String, "Placement where gym is.", required: true
         argument :capacity, Integer, "Max value for booking.", required: false
