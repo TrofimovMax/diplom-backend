@@ -48,30 +48,33 @@ schedule_3 = Biz::Schedule.new do |config|
   }
 end
 
-Gym.create!([
-             {
-               title: 'Йога',
-               address: 'Петровская 51 корп 1',
-               schedule: schedule_1,
-               capacity: 25
-             },
-             {
-               title: 'Бодибилдинг',
-               address: 'Петровская 51 корп 2',
-               schedule: schedule_2,
-               capacity: 20
-             },
-             {
-               title: 'Фитнес',
-               address: 'Петровская 51 корп 3',
-               schedule: schedule_3,
-               capacity: 15
-             },
-           ])
-
 User.create!(email: 'trofimovmaxdev@gmail.com',
              password: 'qwerty1234',
              password_confirmation: 'qwerty1234',
              first_name: 'Grob',
              nickname: 'grob',
              role: User.roles[:admin])
+
+Gym.create!([
+             {
+               title: 'Йога',
+               address: 'Петровская 51 корп 1',
+               schedule: schedule_1,
+               capacity: 25,
+               owner_id: 1
+             },
+             {
+               title: 'Бодибилдинг',
+               address: 'Петровская 51 корп 2',
+               schedule: schedule_2,
+               capacity: 20,
+               owner_id: 1
+             },
+             {
+               title: 'Фитнес',
+               address: 'Петровская 51 корп 3',
+               schedule: schedule_3,
+               capacity: 15,
+               owner_id: 1
+             },
+           ])

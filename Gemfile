@@ -61,3 +61,8 @@ gem 'graphql-pagination'
 gem 'kaminari-activerecord'
 
 gem 'rspec'
+gem 'rspec-rails'
+group :test do
+  gem "shoulda-matchers", "~> 5.0"
+  gem "capybara"
+end

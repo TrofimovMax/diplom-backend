@@ -5,18 +5,17 @@ module Mutations
 
     # TODO: define arguments
     # argument :name, String, required: true
-    argument :title, String, required: true do
-      description "title  must be String"
-    end
-    argument :address, String, required: true do
-      description "address must be String"
-    end
+    argument :attributes, Types::Inputs::Gym::GymAttributes, required: true
 
     field :gym, Types::Models::GymType, null:false
 
-    def resolve(title:, address:)
-      gym = Gym.create!(title:, address:)
-      { gym: }
+    def resolve(attributes:)
+      gym = Gym.create!(attributes.to_h)
+      if gym
+        { gym: gym}
+      else
+        raise GraphQL::ExecutionError, gym.errors.full_messages.join(", ")
+      end
     end
   end
 end

@@ -10,8 +10,13 @@ module Queries
       type Types::Models::GymType, null: true
 
       def resolve(id:)
-        ::Gym.find(id)
+        if Gym.find(id)
+          Gym.find(id)
+        else
+          raise GraphQL::ExecutionError, gym.errors.full_messages.join(", ")
+        end
       end
+
     end
   end
 end
