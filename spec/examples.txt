@@ -1,7 +1,10 @@
 example_id                                                          | status | run_time        |
 ------------------------------------------------------------------- | ------ | --------------- |
-./spec/app/graphql/mutation/Gyms/create_gym_mutation_spec.rb[1:1:1] | passed | 0.00924 seconds |
-./spec/app/graphql/mutation/Gyms/create_gym_mutation_spec.rb[1:1:2] | passed | 0.06354 seconds |
+./spec/app/graphql/mutation/Gyms/create_gym_mutation_spec.rb[1:1:1] | passed | 0.08528 seconds |
+./spec/app/graphql/mutation/Gyms/create_gym_mutation_spec.rb[1:1:2] | passed | 0.00993 seconds |
+./spec/app/graphql/mutation/Gyms/create_gym_mutation_spec.rb[1:2:1] | passed | 0.00412 seconds |
+./spec/app/graphql/mutation/Gyms/create_gym_mutation_spec.rb[1:2:2] | passed | 0.00495 seconds |
+./spec/app/graphql/mutation/Gyms/create_gym_mutation_spec.rb[1:2:3] | passed | 0.00401 seconds |
 ./spec/app/graphql/mutation/Gyms/delete_gym_spec.rb[1:1:1]          | passed | 0.01145 seconds |
 ./spec/app/graphql/mutation/Gyms/delete_gym_spec.rb[1:1:2]          | passed | 0.09986 seconds |
 ./spec/app/graphql/mutation/Gyms/update_gym_mutation_spec.rb[1:1:1] | passed | 0.10629 seconds |
