@@ -7,10 +7,10 @@ module Queries
 
       argument :gym_id, ID, required: true
 
-      type Types::Models::BookingType, null: true
+      type [Types::Models::BookingType], null: true
 
       def resolve(gym_id: )
-        ::Booking.find(gym_id)
+        ::Booking.where(gym_id:  gym_id)
       end
     end
   end

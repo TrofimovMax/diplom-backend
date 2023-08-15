@@ -8,10 +8,10 @@ module Queries
 
       argument :gym_id, ID, required: true
 
-      type Types::Models::WishingType, null: true
+      type [Types::Models::WishingType], null: true
 
       def resolve(gym_id: )
-        ::Wishing.find(gym_id)
+        ::Wishing.where(gym_id: gym_id)
       end
     end
   end
