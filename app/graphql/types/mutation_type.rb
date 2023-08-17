@@ -1,5 +1,6 @@
 module Types
   class MutationType < Types::BaseObject
+    field :update_gym_schedule_mutation, mutation: Mutations::UpdateGymScheduleMutation
     field :update_wishing_mutation, mutation: Mutations::UpdateWishingMutation
     field :delete_wishing_mutation, mutation: Mutations::DeleteWishingMutation
     field :create_wishing_mutation, mutation: Mutations::CreateWishingMutation

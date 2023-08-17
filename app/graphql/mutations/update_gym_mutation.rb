@@ -13,5 +13,8 @@ module Mutations
         raise GraphQL::ExecutionError, gym.errors.full_messages.join(", ")
       end
     end
+
+
+
   end
 end
