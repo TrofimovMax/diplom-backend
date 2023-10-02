@@ -12,5 +12,7 @@ module Types
 
     field :fetch_wishes, resolver: Queries::Wishes::FetchWishes, null: false
     field :get_wishing_by_gym_id, resolver: Queries::Wishes::GetWishingByGymId, null: true
+
+    field :fetch_organization, resolver: Queries::Organizations::FetchOrganization, null: false
   end
 end
