@@ -59,6 +59,7 @@ gem "graphql", "~> 2.0"
 gem "graphiql-rails"
 gem 'graphql-pagination'
 gem 'kaminari-activerecord'
+gem 'apollo-federation'
 
 gem 'rspec'
 gem 'rspec-rails'
