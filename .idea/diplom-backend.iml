@@ -41,6 +41,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.4.2, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.5, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="annotate (v3.2.0, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="apollo-federation (v3.8.4, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.18, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="biz (v1.8.2, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.16.0, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
@@ -62,6 +63,7 @@
     <orderEntry type="library" scope="PROVIDED" name="dry-core (v1.0.0, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.12.0, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.1.0, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="google-protobuf (v3.25.1, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="graphiql-rails (v1.9.0, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="graphql (v2.0.24, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="graphql-pagination (v2.1.1, RVM: ruby-3.1.3 [diplom-backend]) [gem]" level="application" />

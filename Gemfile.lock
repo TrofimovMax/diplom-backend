@@ -71,6 +71,9 @@ GEM
     annotate (3.2.0)
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
+    apollo-federation (3.8.4)
+      google-protobuf (~> 3.22)
+      graphql (>= 1.10.14)
     bcrypt (3.1.18)
     biz (1.8.2)
       clavius (~> 1.0)
@@ -120,6 +123,7 @@ GEM
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    google-protobuf (3.25.1-x86_64-darwin)
     graphiql-rails (1.9.0)
       railties
       sprockets-rails
@@ -262,6 +266,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  apollo-federation
   biz
   bootsnap
   capybara
