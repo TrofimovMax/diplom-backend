@@ -36,12 +36,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_02_133938) do
     t.index ["owner_id"], name: "index_gyms_on_owner_id"
   end
 
-  create_table "intake_tags", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
